@@ -42,7 +42,7 @@ class Question {
     }
 }
 
-public class Quiz {
+class Quiz {
     private static final String[] WELCOME_MESSAGE = {
             "~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~",
             "~  ~  ~  ~  ~                             ~  ~  ~  ~  ~",
@@ -83,11 +83,16 @@ public class Quiz {
             return;
         }
 
-        sc.nextLine(); // Consume newline
+        sc.nextLine(); // Consume a newline.
         System.out.print("\nEnter the name of the player: ");
         String name = sc.nextLine();
         System.out.println("Press Enter to start the Quiz.");
         sc.nextLine();
+
+        // Start timer
+        Timer timer = new Timer(60); // 60 seconds timer
+        Thread timerThread = new Thread(timer);
+        timerThread.start();
 
         // Array to store all the questions
         Question[] questions = new Question[10];
@@ -111,6 +116,9 @@ public class Quiz {
             questions[i].setQuestion(questionData[i][0], questionData[i][1], questionData[i][2], questionData[i][3], questionData[i][4], Integer.parseInt(questionData[i][5]), Integer.parseInt(questionData[i][6]));
             questions[i].askQuestion(sc);
         }
+
+        // Stop timer when quiz ends
+        timer.stopTimer();
 
         System.out.println("\nFINAL RESULTS ARE OUT!!!");
         System.out.println("\nYour Total score is: " + total + " out of 100.");
@@ -141,7 +149,7 @@ class ProgressBarExample extends JFrame {
         progressBar = new JProgressBar(0, 100);
         progressBar.setValue(0);
         progressBar.setStringPainted(true);
-        progressBar.setForeground(Color.blue);
+        progressBar.setForeground(Color.black);
 
         add(progressBar, BorderLayout.CENTER);
     }
@@ -155,11 +163,40 @@ class ProgressBarExample extends JFrame {
 
         for (int i = 0; i <= 100; i++) {
             try {
-                Thread.sleep(50); // Simulate time-consuming task
+                Thread.sleep(50); // To simulate time-consuming task
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             updateProgress(i);
         }
+    }
+}
+
+class Timer implements Runnable {
+    private int time;
+    private boolean running;
+
+    public Timer(int time) {
+        this.time = time;
+        this.running = true;
+    }
+
+    public void run() {
+        while (running && time > 0) {
+            System.out.println("Time remaining: " + time + " seconds");
+            try {
+                Thread.sleep(1000); // Wait for a second
+                time--;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        if (time == 0) {
+            System.out.println("Time's up!");
+        }
+    }
+
+    public void stopTimer() {
+        running = false;
     }
 }
