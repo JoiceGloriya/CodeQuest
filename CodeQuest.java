@@ -99,17 +99,37 @@ class Quiz {
 
         // Setting questions using a loop
         String[][] questionData = {
-                {"What is the only function all C++ Program must contain?", "system()", "program()", "main()", "start()", "3", "10"},
-                {"Which symbol is used for a single-line comment in C++?", "//", "/*", "#", "--", "1", "10"},
-                {"Which data type is used to store whole numbers in C++?", "float", "char", "int", "double", "3", "10"},
-                {"Which keyword is used to define a function in C++?", "method", "define", "function", "void", "4", "10"},
-                {"Which header file should be included to use cin and out statements?", "iostream", "math.h", "stdlib.h", "conio.h", "1", "10"},
-                {"What is the result of expression, 10 % 3?", "3", "1", "0", "2", "2", "10"},
-                {"How do you create a variable with numeric value 5?", "num x = 5", "int x = 5", "double x = 5", "x = 5", "2", "10"},
-                {"Which method can be used to find the length of a string?", "length()", "getSize()", "len()", "getLength()", "1", "10"},
-                {"Which loop is used to execute a code repeatedly until the condition is true?", "for loop", "switch loop", "if loop", "while loop", "4", "10"},
-                {"The relational operator to check if two numbers are equal is:", "=", "=/", "/=", "==", "4", "10"}
-        };
+    {"What is the principle of restricting access to certain details of an object called?", 
+     "Encapsulation", "Abstraction", "Inheritance", "Polymorphism", 
+     "1", "10"},
+    {"Which of the following is not a feature of Object-Oriented Programming?", 
+     "Encapsulation", "Polymorphism", "Data Abstraction", "Compilation", 
+     "4", "10"},
+    {"What keyword is used to inherit a class in Java?", 
+     "extends", "inherits", "implements", "instanceof", 
+     "1", "10"},
+    {"Which of the following concepts allows a class to use methods of another class?", 
+     "Composition", "Encapsulation", "Inheritance", "Aggregation", 
+     "3", "10"},
+    {"Which feature of OOP allows a subclass to provide a specific implementation of a method that is already defined in its superclass?", 
+     "Polymorphism", "Overloading", "Overriding", "Encapsulation", 
+     "3", "10"},
+    {"What is it called when a class has multiple methods with the same name but different parameters?", 
+     "Overloading", "Overriding", "Polymorphism", "Abstraction", 
+     "1", "10"},
+    {"Which of the following allows an object to be treated as an instance of its parent class?", 
+     "Encapsulation", "Inheritance", "Polymorphism", "Abstraction", 
+     "3", "10"},
+    {"What is the term for a class that cannot be instantiated on its own and is meant to be subclassed?", 
+     "Abstract class", "Interface", "Concrete class", "Static class", 
+     "1", "10"},
+    {"Which keyword is used to create an interface in Java?", 
+     "interface", "class", "implements", "extends", 
+     "1", "10"},
+    {"What does the 'this' keyword refer to in a class?", 
+     "The current object", "The parent class", "Static members", "An instance of the class", 
+     "1", "10"}
+};
 
         for (int i = 0; i < questionData.length; i++) {
             questions[i] = new Question();
