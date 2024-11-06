@@ -5,7 +5,6 @@ This is a mini project built in Java by me and my friend using a graphical inter
 ## Features:
 
 - **Timer**:  Each question must be answered within a set time limit (here 60 seconds).
-- **Question Bank**: Multiple OOP-related questions are presented, with the ability to extend the list dynamically.
 
 ## How to Run
 
