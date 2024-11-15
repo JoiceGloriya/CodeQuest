@@ -4,7 +4,7 @@ This is a mini project built in Java by me and my friend using a graphical inter
 
 ## Features:
 
-- **Timer**:  Each question must be answered within a set time limit (here 60 seconds).
+- **Timer**:  Each question must be answered within a set time limit (60 seconds).
 
 ## How to Run
 
