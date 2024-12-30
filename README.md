@@ -1,4 +1,4 @@
-# OOP Quiz Project:
+# CodeQuest - OOP Quiz Project:
 
 This is a mini project built in Java by me and my friend using a graphical interface (`JFrame`) to test users' knowledge of Object-Oriented Programming (OOP) concepts. It includes multiple choice questions and a timer for each question.
 
